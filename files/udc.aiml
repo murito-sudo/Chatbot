@@ -5,7 +5,7 @@
   <category>
         <pattern>*</pattern>
         <template>Sorry, i don't understand what you tried to say, start off by saying hello</template>
-      
+        <think><set name ="topic"></set></think>
   </category>
   
   <category>
@@ -91,7 +91,7 @@
                    <title>Front end Developer</title>
                    <subtitle>Front end Developer</subtitle>
                    <button>
-                       <text>LEARN MORE ABOUT FRONT END DEVELOPMENT</text>
+                       <text>LEARN MORE ABOUT FRONTEND DEVELOPMENT</text>
                        <postback></postback>
                    </button>
                </card>
@@ -121,7 +121,7 @@
                    <title>UI/UX Designer</title>
                    <subtitle>UI/UX DESIGNER</subtitle>
                    <button>
-                       <text>LEARN MORE ABOUT UI/UX DESIGNER</text>
+                       <text>LEARN MORE ABOUT UX DESIGNER</text>
                        <postback></postback>
                    </button>
                </card>
@@ -181,7 +181,7 @@
 
         
         
-        <condition name="learn" value="UI/UX DESIGNER">A UX Designer is focused on all aspects of a product's development, including design, usability, function, and even branding and marketing.
+        <condition name="learn" value="UX DESIGNER">A UX Designer is focused on all aspects of a product's development, including design, usability, function, and even branding and marketing.
         
             <link>
                 <text>Learn more here</text>
@@ -460,13 +460,21 @@
                 </condition>
                 
                 
-                <think><set name="topic">unknown</set></think>
+                <think><set name="topic"></set></think>
                
            </template>
        
         </category>
      
  </topic>
+ 
+ 
+ <category>
+     <pattern>NOTHING</pattern>
+     
+     No problem, let me know when you're ready by typing: My name is ___ again!
+     
+ </category>
  
 
  
