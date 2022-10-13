@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+    
+  <category>
+        <pattern>*</pattern>
+        <template>Sorry, i don't understand what you tried to say, start off by saying hello</template>
+      
+  </category>
+  
+  <category>
+       <pattern> HELLO </pattern>
+       <template>
+           <random>
+               <li>Hi! My name is Cristian Casablanca, i am a bot that'll help you pick
+           the best IT career for you, but before we begin, What is your name? 
+           Say: My name is ____</li>
+               <li>Hello! My name is Cristian Casablanca, i am a bot that'll help you pick
+           the best IT career for you, but before we begin, What is your name? 
+           Say: My name is ____</li>
+               <li>Hola! My name is Cristian Casablanca, i am a bot that'll help you pick
+           the best IT career for you, but before we begin, What is your name? 
+           Say: My name is ____</li>
+               <li>Bonjour! My name is Cristian Casablanca, i am a bot that'll help you pick
+           the best IT career for you, but before we begin, What is your name? 
+           Say: My name is ____</li>
+           </random>
+       </template>
+       
+       
+   </category>
+   
+   <category>
+       
+       <pattern>MY NAME IS *</pattern>
+       
+      <template>Hello <set name="name"><star/></set> !
+      
+      
+           <card>
+               <image></image>
+               <title>Hello <get name="name"/>!</title>
+               <subtitle>What would you like to do?</subtitle>
+               
+               <button>
+              <text>Help me pick a career</text>
+              <postback>Help me pick a career</postback>
+              </button>
+              
+              <button>
+              <text>See list of careers</text>
+              <postback>See list of careers</postback>
+              </button>
+              
+              <button>
+              <text>Nothing</text>
+              <postback>Nothing</postback>
+              </button>
+              
+              
+           </card>
+      
+          
+      
+      
+      </template>
+      
+     
+   </category>
+   
+   
+   <!-- carousel's category !-->
+   
+   <category>
+       <pattern>SEE LIST OF CAREERS</pattern>
+       
+       <template>
+           <carousel>
+               <card>
+                   <image>https://www.liveabout.com/thmb/zCuzdTzkdnHoY-1KSRorWkmfHcQ=/1500x844/smart/filters:no_upscale()/backenddeveloper-2502825a14ff440eb775dc4244e7ed4d.png</image>
+                   <title>Backend Developer</title>
+                   <subtitle>Backend Developer</subtitle>
+                   <button>
+                       <text>LEARN MORE ABOUT BACKEND DEVELOPMENT</text>
+                       <postback></postback>
+                   </button>
+               </card>
+               
+               <card>
+                   <image>https://kinsta.com/wp-content/uploads/2021/11/front-end-developer-1024x512.png</image>
+                   <title>Front end Developer</title>
+                   <subtitle>Front end Developer</subtitle>
+                   <button>
+                       <text>LEARN MORE ABOUT FRONT END DEVELOPMENT</text>
+                       <postback></postback>
+                   </button>
+               </card>
+               
+               <card>
+                   <image>https://marvel-b1-cdn.bc0a.com/f00000000100045/www.elmhurst.edu/wp-content/uploads/2020/03/cybersecurity-vs-information-security-illustration.jpg</image>
+                   <title>Cyber Security</title>
+                   <subtitle>Cyber Security</subtitle>
+                   <button>
+                       <text>LEARN MORE ABOUT CYBERSECURITY</text>
+                       <postback></postback>
+                   </button>
+               </card>
+               
+               <card>
+                   <image>https://www.geteducated.com/wp-content/uploads/2021/12/iStock-1336250828-1140x400.jpg</image>
+                   <title>Database Administrator</title>
+                   <subtitle>Database Administrator</subtitle>
+                   <button>
+                       <text>LEARN MORE ABOUT DATABASE ADMINISTRATOR</text>
+                       <postback></postback>
+                   </button>
+               </card>
+               
+               <card>
+                   <image>https://miro.medium.com/max/1050/1*hp-yfKsmzsj711iLbM8eEw.jpeg</image>
+                   <title>UI/UX Designer</title>
+                   <subtitle>UI/UX DESIGNER</subtitle>
+                   <button>
+                       <text>LEARN MORE ABOUT UI/UX DESIGNER</text>
+                       <postback></postback>
+                   </button>
+               </card>
+               
+               
+               
+           </carousel>
+           
+
+       </template>
+       
+       
+   </category>
+   
+   
+   <!-- Learn More button function !-->
+   
+   <category>
+       <pattern>LEARN MORE ABOUT *</pattern>
+       <template>
+        <think><set name="learn"><star /></set></think>
+        
+         <condition name="learn" value = "Database Administrator">Database administrators are responsible for accurately and securely using, maintaining and developing computerised databases within a wide range of public and private sector organisations. Any organisation that stores large amounts of information and data may employ a database administrator.
+        
+            <link>
+                <text>Learn more here</text>
+                <url>https://www.bmc.com/blogs/dba-database-administrator/</url>
+            </link>
+        </condition>
+       
+        
+        <condition name="learn" value = "Backend Development">Back-end developers are the experts who build and maintain the mechanisms that process data and perform actions on websites. Unlike front-end developers, who control everything you can see on a website, back-end developers are involved in data storage, security, and other server-side functions that you cannot see.
+        
+            <link>
+                <text>Learn more here</text>
+                <url>https://www.coursera.org/articles/back-end-developer</url>
+            </link>
+        </condition>
+        
+        <condition name="learn" value="Frontend Development">What a Front End Developer Does: An Overview. A front end developer has one general responsibility: to ensure that website visitors can easily interact with the page. They do this through the combination of design, technology and programming to code a website's appearance, as well as taking care of debugging.
+        
+            <link>
+                <text>Learn more here</text>
+                <url>https://bootcamp.berkeley.edu/resources/coding/learn-web-development/what-does-a-front-end-web-developer-do/#:~:text=What%20a%20Front%20End%20Developer%20Does%3A%20An%20Overview,as%20taking%20care%20of%20debugging.</url>
+            </link>
+        </condition>
+        
+        
+        <condition name="learn" value="CYBERSECURITY">Cybersecurity analysts protect computer networks from cyberattacks and unauthorized access. They do this by trying to anticipate and defend against cyber threats, and responding to security breaches when they do happen.
+        
+            <link>
+                <text>Learn more here</text>
+                <url>https://www.coursera.org/articles/cybersecurity-analyst-job-guide</url>
+            </link>
+        </condition>
+        
+
+        
+        
+        <condition name="learn" value="UI/UX DESIGNER">A UX Designer is focused on all aspects of a product's development, including design, usability, function, and even branding and marketing.
+        
+            <link>
+                <text>Learn more here</text>
+                <url>https://brainstation.io/career-guides/what-does-a-ux-designer-do</url>
+            </link>
+        </condition>
+        
+        
+        
+       </template>
+       
+   </category>
+   
+   <!-- Final review questionnaire !-->
+   
+   
+   <category>
+       <pattern>HELP ME PICK A CAREER</pattern>
+       <template>
+           Ok, let me ask you a few questions.
+           
+           
+           
+           <card>
+               <image></image>
+               <title>Technical</title>
+               <subtitle>How technical you want your job to be?</subtitle>
+               
+              <button>
+              <text>Extremely Technical</text>
+              <postback>Extremely Technical</postback>
+              </button>
+              
+              <button>
+              <text>Not too technical</text>
+              <postback>Not too technical</postback>
+              </button>
+           
+              
+              
+           </card>
+           
+           <think><set name="topic">queston</set></think>
+       </template>
+       
+       
+   </category>
+   
+   
+<topic name="queston">
+       
+    <category>
+       <pattern>* TECHNICAL</pattern>
+       <template>
+           <think><set name="technic"><star /></set></think>
+           
+           
+           <card>
+               <image></image>
+               <title>WebDev</title>
+               <subtitle>Do you have an interest in webDev?</subtitle>
+               
+              <button>
+              <text>Yes</text>
+              <postback>Yes</postback>
+              </button>
+              
+              <button>
+              <text>No</text>
+              <postback>No</postback>
+              </button>
+           
+              
+              
+           </card>
+        
+       
+       </template>
+       
+   </category>
+
+
+
+     <category>
+         <pattern>*</pattern>
+         <template>
+             <think><set name="webdev"><star /></set></think>
+             <card>
+                   <image></image>
+                   <title>Passion for code</title>
+                   <subtitle>Do you even code bro?</subtitle>
+                   
+                  <button>
+                  <text>I love it!</text>
+                  <postback>I love it!</postback>
+                  </button>
+                  
+                  <button>
+                  <text>Not at all boy!</text>
+                  <postback>Not at all boy</postback>
+                  </button>
+               
+               </card>
+             
+            <think><set name="topic">questoff</set></think>
+         </template>
+     </category>
+     
+ </topic>
+ 
+ 
+ 
+ <topic name="questoff">
+     
+      <category>
+           <pattern>*</pattern>
+           <template>
+               <think><set name="final"><star /></set></think>
+               
+              
+               
+               <!-- Technical fields !-->
+                
+                <condition name="technic" value="Extremely">
+                    
+                   
+                    <condition name="webdev" value="Yes">
+                        <condition name="final" value="I love it">
+                            <random>
+                                
+                                <li>Recommended Job: Back End developer <br/><br/> Back-end developers are the experts who build and maintain the mechanisms that process data and perform actions on websites. Unlike front-end developers, who control everything you can see on a website, back-end developers are involved in data storage, security, and other server-side functions that you cannot see.
+        
+                                    <link>
+                                        <text>Learn more here</text>
+                                        <url>https://www.coursera.org/articles/back-end-developer</url>
+                                    </link>
+                                </li>
+                                
+                                <li>Recommended Job: Front end Developer <br/><br/> What a Front End Developer Does: An Overview. A front end developer has one general responsibility: to ensure that website visitors can easily interact with the page. They do this through the combination of design, technology and programming to code a website's appearance, as well as taking care of debugging.
+                                
+                                    <link>
+                                        <text>Learn more here</text>
+                                        <url>https://bootcamp.berkeley.edu/resources/coding/learn-web-development/what-does-a-front-end-web-developer-do/#:~:text=What%20a%20Front%20End%20Developer%20Does%3A%20An%20Overview,as%20taking%20care%20of%20debugging.</url>
+                                    </link>
+                                                            
+                                </li>
+                                
+                            </random>
+                            
+                        </condition>
+                        
+                        <condition name="final" value="Not at all boy">
+                            Recommended Job: UX/UI Designer <br/><br/> A UX Designer is focused on all aspects of a product's development, including design, usability, function, and even branding and marketing.
+        
+                            <link>
+                                <text>Learn more here</text>
+                                <url>https://brainstation.io/career-guides/what-does-a-ux-designer-do</url>
+                            </link>
+                            
+                            
+                        </condition>
+                        
+                    </condition>
+                    
+                    <condition name="webdev" value="No">
+                        <condition name="final" value="I love it">
+                            
+                            <random>
+                                <li> Recommended Job: Back End developer <br/><br/> Back-end developers are the experts who build and maintain the mechanisms that process data and perform actions on websites. Unlike front-end developers, who control everything you can see on a website, back-end developers are involved in data storage, security, and other server-side functions that you cannot see.
+        
+                                    <link>
+                                        <text>Learn more here</text>
+                                        <url>https://www.coursera.org/articles/back-end-developer</url>
+                                    </link>
+                                    
+                                    
+                                </li>
+                                
+                                
+                                <li>
+                                     Recommended Job: <br/><br/>Cybersecurity analysts protect computer networks from cyberattacks and unauthorized access. They do this by trying to anticipate and defend against cyber threats, and responding to security breaches when they do happen.
+        
+                                    <link>
+                                        <text>Learn more here</text>
+                                        <url>https://www.coursera.org/articles/cybersecurity-analyst-job-guide</url>
+                                    </link>
+                                    
+                                </li>
+                                
+                                
+                                
+                                
+                                
+                            </random>
+                           
+                            
+                        </condition>
+                        
+                        <condition name="final" value="Not at all boy">
+                           Recommended Job: <br/><br/>Database administrators are responsible for accurately and securely using, maintaining and developing computerised databases within a wide range of public and private sector organisations. Any organisation that stores large amounts of information and data may employ a database administrator.
+        
+                            <link>
+                                <text>Learn more here</text>
+                                <url>https://www.bmc.com/blogs/dba-database-administrator/</url>
+                            </link>
+                            
+                            
+                        </condition>
+                        
+                        
+                    </condition>
+                    
+                    
+                    
+                </condition>
+                
+                
+                <!-- Non technical Fields !-->
+                
+                <condition name="technic" value="Not too">
+                    <condition name="webdev" value="Yes">
+                        <condition name="final" value="I love it">
+                            Recommended Job: Front end Developer <br/><br/> What a Front End Developer Does: An Overview. A front end developer has one general responsibility: to ensure that website visitors can easily interact with the page. They do this through the combination of design, technology and programming to code a website's appearance, as well as taking care of debugging.
+                                
+                                <link>
+                                    <text>Learn more here</text>
+                                    <url>https://bootcamp.berkeley.edu/resources/coding/learn-web-development/what-does-a-front-end-web-developer-do/#:~:text=What%20a%20Front%20End%20Developer%20Does%3A%20An%20Overview,as%20taking%20care%20of%20debugging.</url>
+                                </link>
+                            
+                            
+                            
+                        </condition>
+                        
+                        <condition name="final" value="Not at all boy">
+                            
+                            Recommended Job: UX/UI Designer <br/><br/> A UX Designer is focused on all aspects of a product's development, including design, usability, function, and even branding and marketing.
+        
+                            <link>
+                                <text>Learn more here</text>
+                                <url>https://brainstation.io/career-guides/what-does-a-ux-designer-do</url>
+                            </link>
+                            
+                            
+                        </condition>
+                        
+                    </condition>
+                    
+                    <condition name="webdev" value="No">
+                        <condition name="final" value="I love it">
+                            Recommended Job: Cybersecurity analyst, <br/><br/> Cybersecurity analysts protect computer networks from cyberattacks and unauthorized access. They do this by trying to anticipate and defend against cyber threats, and responding to security breaches when they do happen.
+        
+                            <link>
+                                <text>Learn more here</text>
+                                <url>https://www.coursera.org/articles/cybersecurity-analyst-job-guide</url>
+                            </link>
+                            
+                            
+                        </condition>
+                        
+                        <condition name="final" value="Not at all boy">
+                            Recommended Job: UX/UI Designer <br/><br/> A UX Designer is focused on all aspects of a product's development, including design, usability, function, and even branding and marketing.
+        
+                            <link>
+                                <text>Learn more here</text>
+                                <url>https://brainstation.io/career-guides/what-does-a-ux-designer-do</url>
+                            </link>
+                            
+                            
+                        </condition>
+                        
+                        
+                    </condition>
+                    
+                    
+                    
+                </condition>
+                
+                
+                <think><set name="topic">unknown</set></think>
+               
+           </template>
+       
+        </category>
+     
+ </topic>
+ 
+
+ 
+   <!-- Exercise categories !-->
+   
+   <category>
+       <pattern>WHAT IS MY NAME</pattern>
+       <template>Your name is <get name="name"/></template>
+       
+   </category>
+  
+</aiml>
