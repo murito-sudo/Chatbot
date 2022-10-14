@@ -2,10 +2,12 @@
 <aiml>
     
     
+        
+
   <category>
         <pattern>*</pattern>
         <template>Sorry, i don't understand what you tried to say, start off by saying hello</template>
-        <think><set name ="topic"></set></think>
+       
   </category>
   
   <category>
@@ -473,6 +475,24 @@
      <pattern>NOTHING</pattern>
      
      No problem, let me know when you're ready by typing: My name is ___ again!
+     
+ </category>
+ 
+ <category>
+     <pattern> HELP </pattern>
+     
+     <template>
+         Use Hello to get to know me! 
+         <br/>
+     
+     
+         or use My name is _____ to find the best career for you!
+         
+         
+         
+     </template>
+     
+     
      
  </category>
  
