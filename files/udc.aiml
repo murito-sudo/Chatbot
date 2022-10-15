@@ -471,8 +471,12 @@
  
  <category>
      <pattern>NOTHING</pattern>
+     <template>
+          No problem, let me know when you're ready by typing: My name is ___ again!
      
-     No problem, let me know when you're ready by typing: My name is ___ again!
+     </template>
+     
+    
      
  </category>
  
